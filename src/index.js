@@ -1,14 +1,14 @@
 const express = require("express");
-
 const app = express();
-const port = 3000;
+const PORT = 4000;
 
-// Define a route
-app.get("/", (_, res) => {
-  res.send("Hello, World!");
+app.get("/home", (req, res) => {
+  res.status(200).json("Welcome, your app is working well");
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
+
+// Export the Express API
+module.exports = app;
