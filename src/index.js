@@ -1,13 +1,18 @@
 const express = require("express");
+
 const app = express();
 const PORT = 4000;
 
-app.get("/home", (req, res) => {
-  res.status(200).json("Welcome, your app is working well");
+app.listen(PORT, () => {
+  console.log(`API listening on PORT ${PORT} `);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+app.get("/", (req, res) => {
+  res.send("Hey this is my API running 🥳");
+});
+
+app.get("/about", (req, res) => {
+  res.send("This is my about route..... ");
 });
 
 // Export the Express API
